@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-bg-color: #f1eedc;
+  --h1-color: #466f81;
+  --text-color: #304b55;
+  --button-bg-color: #5a8ba0;
+  --h1-font-family: 'Poetsen One';
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100px 2fr 1fr 1fr;
+  background-color: var(--main-bg-color);
+  font-family: Roboto, sans-serif;
+  color: var(--text-color);
+}
+
+header {
+  grid-area: 1 / 1 / 2 / 4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  background-color: #e5ddc5;
+}
+
+header h1 {
+  color: var(--h1-color);
+  font-family: 'Poetsen One', sans-serif;
+  font-size: 64px;
+  letter-spacing: 2px;
+}
+
+.nav-link {
+  margin: auto 10px;
+  color: var(--h1-color);
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border-radius: 1px solid brown;
+}
+
+.shopping-cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 100px;
+  margin-top: 100px;
+  gap: 20px;
+}
+
+.shopping-cart h3 {
+  font-size: 24px;
+}
+
+.items {
+  display: flex;
+  justify-content: space-around;
+}
+
+.items img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.summary {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 100px;
+}
+
+.summary h3 {
+  font-size: 24px;
+}
+
+footer {
+  grid-area: 4 / 1 / 5 / 7;
+  margin-top: 50px;
+  text-align: center;
+}
+
+@media screen and (max-width: 850px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .nav-link {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 0;
+  }
+
+  .nav-link span {
+    min-width: 100px;
+    margin-left: 20px;
+  }
+
+  .logo {
+    display: none;
+  }
+}
+
+.shopping-cart {
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+.summary {
+  grid-area: 2 / 3 / 3 /4;
+}
+
+.btns {
+  grid-area: 3 / 1 / 4 / 4;
+}
+
+footer {
+  grid-area: 4 / 1 / 5 / 4;
+}
