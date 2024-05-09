@@ -53,6 +53,10 @@ header h1 {
   cursor: pointer;
 }
 
+.nav-link:hover {
+  color: #649db5;
+}
+
 .logo {
   width: 150px;
   height: 150px;
@@ -81,10 +85,11 @@ header h1 {
 .products {
   grid-area: 3 / 1 / 4 / 7;
   margin-top: 50px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 100px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  justify-items: center;
+  row-gap: 50px;
 }
 
 .products img {
@@ -92,6 +97,11 @@ header h1 {
   height: 500px;
   object-fit: cover;
   border-radius: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.products img:hover {
+  border: 2px solid var(--h1-color);
 }
 
 .product {
@@ -140,9 +150,17 @@ footer {
   margin-top: 50px;
   text-align: center;
   padding-bottom: 10px;
+  font-family: var(--h1-font-family);
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (min-width: 2000px) {
+  .products {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr;
+  }
+}
+
+@media screen and (max-width: 950px) {
   nav {
     display: flex;
     flex-direction: column;
@@ -166,5 +184,23 @@ footer {
 
   .banner {
     margin-top: 150px;
+  }
+
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  .products img {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .products {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
   }
 }
