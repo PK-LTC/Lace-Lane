@@ -61,7 +61,6 @@ header h1 {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border-radius: 1px solid brown;
 }
 
 .banner {
@@ -73,10 +72,11 @@ header h1 {
   background-image: url('https://i.pinimg.com/736x/03/08/34/030834f7223ebfd68a5b7a0749b1659e.jpg');
   opacity: 0.75;
   margin-top: 200px;
+  min-width: 500px;
 }
 
 .banner-text {
-  font-size: 24px;
+  font-size: 36px;
   font-family: var(--h1-font-family);
   letter-spacing: 5px;
   margin-top: 50px;
@@ -202,5 +202,15 @@ footer {
   .products {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
+    margin-top: 0;
+  }
+
+  .banner {
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .banner h2 {
+    font-size: 24px;
   }
 }
