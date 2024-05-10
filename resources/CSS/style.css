@@ -21,6 +21,8 @@ body {
   background-color: var(--main-bg-color);
   font-family: Roboto, sans-serif;
   color: var(--text-color);
+  margin: auto;
+  max-width: 1550px;
 }
 
 header {
@@ -148,9 +150,24 @@ button:hover {
 footer {
   grid-area: 4 / 1 / 5 / 7;
   margin-top: 50px;
-  text-align: center;
-  padding-bottom: 10px;
   font-family: var(--h1-font-family);
+  display: flex;
+  background-color: #e5ddc5;
+  height: 150px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+footer.fa {
+  padding: 20px;
+  width: 60px;
+  font-size: 50px;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  white-space: nowrap;
 }
 
 @media screen and (min-width: 2000px) {
