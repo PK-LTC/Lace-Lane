@@ -193,6 +193,14 @@ button.cancel:hover {
 }
 
 footer {
+  grid-area: 4 / 1 / 5 / 7;
+  margin-top: 50px;
+  text-align: center;
+  padding-bottom: 10px;
+  font-family: var(--h1-font-family);
+}
+
+/* footer {
   grid-area: 4 / 1 / 5 / 3;
   margin-top: 50px;
   font-family: var(--h1-font-family);
@@ -201,7 +209,6 @@ footer {
   height: 150px;
   justify-content: space-around;
   align-items: center;
-  
 }
 
 
@@ -215,7 +222,7 @@ footer.fa {
   display: flex;
   justify-content: center;
   white-space: nowrap;
-}
+} */
 
 @media screen and (max-width: 950px) {
   nav {
