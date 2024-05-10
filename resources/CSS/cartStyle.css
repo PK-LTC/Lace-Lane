@@ -17,7 +17,7 @@ body {
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 100px 2fr 1fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr 1fr;
   background-color: var(--main-bg-color);
   font-family: Roboto, sans-serif;
   color: var(--text-color);
@@ -73,7 +73,7 @@ header h1 {
   align-items: flex-start;
   width: 90%;
   margin-left: auto;
-  margin-top: 100px;
+  margin-top: 200px;
   gap: 20px;
 }
 
@@ -140,7 +140,7 @@ button:hover {
 .summary {
   grid-area: 2 / 2 / 3 /3;
   width: 90%;
-  margin-top: 100px;
+  margin-top: 200px;
   padding-left: 200px;
 }
 
@@ -198,10 +198,12 @@ footer {
   font-family: var(--h1-font-family);
   display: flex;
   background-color: #e5ddc5;
-  height: 100px;
+  height: 150px;
   justify-content: space-around;
   align-items: center;
+  
 }
+
 
 footer.fa {
   padding: 20px;
@@ -209,6 +211,11 @@ footer.fa {
   font-size: 50px;
 }
 
+.social {
+  display: flex;
+  justify-content: center;
+  white-space: nowrap;
+}
 
 @media screen and (max-width: 950px) {
   nav {
