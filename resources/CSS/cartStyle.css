@@ -47,7 +47,7 @@ header h1 {
 }
 
 .nav-link {
-  margin: auto 10px;
+  margin-left: 20px;
   color: var(--h1-color);
   font-size: 18px;
   text-decoration: none;
@@ -63,8 +63,6 @@ header h1 {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border-radius: 1px solid brown;
-  margin-left: 20%;
 }
 
 .shopping-cart {
@@ -171,11 +169,6 @@ td {
   padding-top: 20px;
 }
 
-footer {
-  grid-area: 4 / 1 / 5 / 7;
-  margin-top: 50px;
-  text-align: center;
-}
 
 button.pay {
   font-size: 28px;
@@ -198,6 +191,24 @@ button.cancel:hover {
   color: var(--main-bg-color);
   background-color: var(--button-bg-color);
 }
+
+footer {
+  grid-area: 4 / 1 / 5 / 3;
+  margin-top: 50px;
+  font-family: var(--h1-font-family);
+  display: flex;
+  background-color: #e5ddc5;
+  height: 100px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+footer.fa {
+  padding: 20px;
+  width: 60px;
+  font-size: 50px;
+}
+
 
 @media screen and (max-width: 950px) {
   nav {
@@ -237,19 +248,3 @@ button.cancel:hover {
 
 
 
-footer {
-  grid-area: 4 / 1 / 5 / 7;
-  margin-top: 50px;
-  font-family: var(--h1-font-family);
-  display: flex;
-  background-color: #e5ddc5;
-  height: 100px;
-  justify-content: space-around;
-  align-items: center;
-}
-
-footer.fa {
-  padding: 20px;
-  width: 30px;
-  font-size: 30px;
-}
