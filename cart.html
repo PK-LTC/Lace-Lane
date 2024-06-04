@@ -51,46 +51,9 @@
 
     <div class="shopping-cart">
       <h3>Shopping Cart</h3>
-      <div class="items item-1">
-        <img src="./resources/images/sneaker01.jpg" alt="" />
-        <div class="description">
-          <h4>Jordan Spizike Low</h4>
-          <p>Sand</p>
-          <span>Size: 5</span>
-          <p class="price">A$220.00</p>
-        </div>
-        <div class="quantity">
-          <input type="number" name="pcs" min="1" max="4" placeholder="1" />
-          <button>Remove</button>
-        </div>
-      </div>
-      <div class="items item-2">
-        <img src="./resources/images/sneaker02.jpg" alt="" />
-        <div class="description">
-          <h4>New Balance Kawhi 4</h4>
-          <p>Petal</p>
-          <span>Size: 9</span>
-          <p class="price">A$190.00</p>
-        </div>
-        <div class="quantity">
-          <input type="number" name="pcs" min="1" max="4" placeholder="1" />
-          <button>Remove</button>
-        </div>
-      </div>
-      <div class="items item-3">
-        <img src="./resources/images/sneaker05.jpg"" alt="" />
-        <div class="description">
-          <h4>Adidas Ozmillen Utility</h4>
-          <p>Black/Castlerock</p>
-          <span>Size: 10</span>
-          <p class="price">A$280.00</p>
-        </div>
-        <div class="quantity">
-          <input type="number" name="pcs" min="1" max="4" placeholder="1" />
-          <button>Remove</button>
-        </div>
-      </div>
+      <!-- Add more content through DOM -->
     </div>
+
     <div class="summary">
       <h3>Summary</h3>
       <input type="text" name="coupon" id="coupon" placeholder="Enter Coupon Code Here" />
@@ -116,6 +79,7 @@
 
     <footer>
       <p>LaceLane &copy; 2024</p>
+      <span id="watch"></span>
       <a href="./index.html">
         <img src="./resources/images/logo-lacelane.png" alt="logo" class="logo"
       /></a>
@@ -131,6 +95,7 @@
         </a>
       </div>
     </footer>
-    <!-- <footer>LaceLane &copy; 2024</footer> -->
+
+    <script type="module" src="./cart.js"></script>
   </body>
 </html>

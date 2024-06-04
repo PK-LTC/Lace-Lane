@@ -89,15 +89,14 @@ header h1 {
 }
 
 .items img {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 300px;
   object-fit: cover;
-  padding-right: 8%;
-  padding-bottom: 8%;
+  padding-right: 5%;
 }
 
 .description {
-  padding-right: 10%;
+  padding-right: 5%;
   width: 180px;
   max-width: 250px;
   min-width: 200px;
@@ -160,15 +159,13 @@ button.promo-btn {
   margin-bottom: 40px;
   margin-top: 0;
   max-width: 168px;
-  min-width: 168px
+  min-width: 168px;
 }
-
 
 td {
   padding-right: 60px;
   padding-top: 20px;
 }
-
 
 button.pay {
   font-size: 28px;
@@ -211,7 +208,6 @@ footer {
   align-items: center;
 }
 
-
 footer.fa {
   padding: 20px;
   width: 60px;
@@ -251,14 +247,7 @@ footer.fa {
     justify-content: start;
   }
 
-
   .quantity button {
     margin-top: auto;
   }
-
 }
-
-
-
-
-
