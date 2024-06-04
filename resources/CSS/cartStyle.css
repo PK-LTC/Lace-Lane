@@ -81,14 +81,14 @@ header h1 {
   font-size: 24px;
 }
 
-.items {
+.item {
   display: flex;
   justify-content: space-around;
   line-height: 2;
   margin: 20px auto;
 }
 
-.items img {
+.item img {
   width: 250px;
   height: 300px;
   object-fit: cover;

@@ -28,6 +28,8 @@ function updateDateTime() {
 setInterval(updateDateTime, 1000);
 
 // Add to cart button functionality
+
+//Check if there are items inside cart
 const cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
 const addToCartBtns = document.querySelectorAll('button');
 
@@ -44,6 +46,7 @@ for (let i = 0; i < addToCartBtns.length; i++) {
     if (cart.length === 0) {
       cart.push(selectedProduct);
     } else {
+      //Not add same items twice
       let result = cart.find((el) => el.title === selectedProduct.title);
       if (result === undefined) {
         cart.push(selectedProduct);
