@@ -16,3 +16,12 @@ products.forEach((product, i) => {
   `;
   productsContainer.appendChild(container);
 });
+
+// Display the date and time
+function updateDateTime() {
+  let currentDate = new Date().toDateString();
+  let currentTime = new Date().toLocaleTimeString();
+  document.getElementById('watch').innerHTML = `${currentDate}-${currentTime}`;
+}
+
+setInterval(updateDateTime, 1000);
