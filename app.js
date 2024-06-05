@@ -27,11 +27,24 @@ function updateDateTime() {
 
 setInterval(updateDateTime, 1000);
 
-// Add to cart button functionality
+// Update number on the cart icon
+function updateCartNum(count, container) {
+  if (document.querySelector('.badge')) {
+    document.querySelector('.badge').innerHTML = count;
+  } else {
+    const cartNumEl = document.createElement('span');
+    cartNumEl.innerHTML = `
+    <span class="badge badge-warning" id="lblCartCount">${count}</span>
+  `;
+    container.appendChild(cartNumEl);
+  }
+}
 
-//Check if there are items inside cart
+// Add to cart button functionality
 const cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
 const addToCartBtns = document.querySelectorAll('button');
+const cartContainer = document.getElementById('cart');
+let countAddItem = 0;
 
 for (let i = 0; i < addToCartBtns.length; i++) {
   const btn = addToCartBtns[i];
@@ -45,14 +58,37 @@ for (let i = 0; i < addToCartBtns.length; i++) {
 
     if (cart.length === 0) {
       cart.push(selectedProduct);
+      countAddItem++;
+      updateCartNum(countAddItem, cartContainer);
     } else {
       //Not add same items twice
       let result = cart.find((el) => el.title === selectedProduct.title);
       if (result === undefined) {
         cart.push(selectedProduct);
+        countAddItem++;
+        updateCartNum(countAddItem, cartContainer);
       }
     }
 
     localStorage.setItem('cart', JSON.stringify(cart));
   });
 }
+
+// fetch and display data
+const info = document.querySelector('.info');
+
+fetch('https://onlineprojectsgit.github.io/API/WDEndpoint.json')
+  .then((res) => {
+    if (res.ok) {
+      return res.json();
+    }
+    throw new Error('Request failed!');
+  })
+  .then((data) => {
+    console.log(data);
+    const infoHTML = `Built by ${data.info.students[0]}, ${data.info.students[15]}, ${data.info.students[17]}.A group project of ${data.info.Name} program, Cohort ${data.info.cohort}.`;
+    info.innerHTML = infoHTML;
+  })
+  .catch((error) => console.error(error.message));
+
+//Update number show on cart icon

@@ -147,14 +147,6 @@ button:hover {
   background: #486d7f;
 }
 
-/* footer {
-  grid-area: 4 / 1 / 5 / 7;
-  margin-top: 50px;
-  text-align: center;
-  padding-bottom: 10px;
-  font-family: var(--h1-font-family);
-} */
-
 footer {
   grid-area: 4 / 1 / 5 / 7;
   margin-top: 50px;
@@ -176,6 +168,27 @@ footer.fa {
   display: flex;
   justify-content: center;
   white-space: nowrap;
+}
+
+.badge {
+  padding-left: 9px;
+  padding-right: 9px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+}
+
+.label-warning[href],
+.badge-warning[href] {
+  background-color: #c67605;
+}
+#lblCartCount {
+  font-size: 12px;
+  background: var(--button-bg-color);
+  color: #fff;
+  padding: 0 5px;
+  vertical-align: top;
+  margin-left: -10px;
 }
 
 @media screen and (min-width: 2000px) {

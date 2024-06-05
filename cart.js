@@ -13,6 +13,11 @@ const cartProducts = localStorage.getItem('cart') ? JSON.parse(localStorage.getI
 
 const productsContainer = document.querySelector('.shopping-cart');
 
+//Calculate dynamice cart total price
+const subtotalEl = document.querySelector('.subtotal');
+const totalEl = document.querySelector('.total');
+let total = 0;
+
 for (let i = 0; i < cartProducts.length; i++) {
   const product = cartProducts[i];
 
@@ -31,11 +36,14 @@ for (let i = 0; i < cartProducts.length; i++) {
         </div>
   `;
   productsContainer.appendChild(container);
+
+  total += product.price;
+  subtotalEl.innerHTML = `$${total}`;
+  totalEl.innerHTML = `$${total}`;
 }
 
 // Remove items from cart using a remove button
 const removeBtns = document.querySelectorAll('.remove');
-console.log(removeBtns);
 
 for (let i = 0; i < removeBtns.length; i++) {
   const btn = removeBtns[i];
@@ -54,3 +62,20 @@ for (let i = 0; i < removeBtns.length; i++) {
     window.location.reload();
   });
 }
+
+// fetch and display data
+const info = document.querySelector('.info');
+
+fetch('https://onlineprojectsgit.github.io/API/WDEndpoint.json')
+  .then((res) => {
+    if (res.ok) {
+      return res.json();
+    }
+    throw new Error('Request failed!');
+  })
+  .then((data) => {
+    console.log(data);
+    const infoHTML = `Built by ${data.info.students[0]}, ${data.info.students[15]}, ${data.info.students[17]}.A group project of ${data.info.Name} program, Cohort ${data.info.cohort}.`;
+    info.innerHTML = infoHTML;
+  })
+  .catch((error) => console.error(error.message));
