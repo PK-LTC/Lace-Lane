@@ -189,14 +189,6 @@ button.cancel:hover {
   background-color: var(--button-bg-color);
 }
 
-/* footer {
-  grid-area: 4 / 1 / 5 / 7;
-  margin-top: 50px;
-  text-align: center;
-  padding-bottom: 10px;
-  font-family: var(--h1-font-family);
-} */
-
 footer {
   grid-area: 4 / 1 / 5 / 3;
   margin-top: 50px;
@@ -218,6 +210,18 @@ footer.fa {
   display: flex;
   justify-content: center;
   white-space: nowrap;
+}
+
+#cart-count {
+  font-size: 12px;
+  background: var(--button-bg-color);
+  color: #fff;
+  padding: 0 5px;
+  vertical-align: top;
+  margin-left: -10px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
 }
 
 @media screen and (max-width: 950px) {

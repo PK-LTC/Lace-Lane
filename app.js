@@ -28,15 +28,15 @@ function updateDateTime() {
 setInterval(updateDateTime, 1000);
 
 // Update number on the cart icon
-function updateCartNum(count, container) {
+function updateCartNum(count, container, referenceEl) {
   if (document.querySelector('.badge')) {
     document.querySelector('.badge').innerHTML = count;
   } else {
     const cartNumEl = document.createElement('span');
     cartNumEl.innerHTML = `
-    <span class="badge badge-warning" id="lblCartCount">${count}</span>
-  `;
-    container.appendChild(cartNumEl);
+      <span class="badge" id="cart-count">${count}</span>
+    `;
+    container.insertBefore(cartNumEl, referenceEl);
   }
 }
 
@@ -44,6 +44,7 @@ function updateCartNum(count, container) {
 const cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
 const addToCartBtns = document.querySelectorAll('button');
 const cartContainer = document.getElementById('cart');
+const cartTextEl = document.getElementById('cart-text');
 let countAddItem = 0;
 
 for (let i = 0; i < addToCartBtns.length; i++) {
@@ -59,18 +60,19 @@ for (let i = 0; i < addToCartBtns.length; i++) {
     if (cart.length === 0) {
       cart.push(selectedProduct);
       countAddItem++;
-      updateCartNum(countAddItem, cartContainer);
+      updateCartNum(countAddItem, cartContainer, cartTextEl);
     } else {
       //Not add same items twice
       let result = cart.find((el) => el.title === selectedProduct.title);
       if (result === undefined) {
         cart.push(selectedProduct);
         countAddItem++;
-        updateCartNum(countAddItem, cartContainer);
+        updateCartNum(countAddItem, cartContainer, cartTextEl);
       }
     }
 
     localStorage.setItem('cart', JSON.stringify(cart));
+    localStorage.setItem('cartCount', countAddItem);
   });
 }
 
@@ -85,7 +87,6 @@ fetch('https://onlineprojectsgit.github.io/API/WDEndpoint.json')
     throw new Error('Request failed!');
   })
   .then((data) => {
-    console.log(data);
     const infoHTML = `Built by ${data.info.students[0]}, ${data.info.students[15]}, ${data.info.students[17]}.A group project of ${data.info.Name} program, Cohort ${data.info.cohort}.`;
     info.innerHTML = infoHTML;
   })
