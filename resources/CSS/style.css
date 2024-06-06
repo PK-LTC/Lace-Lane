@@ -147,6 +147,12 @@ button:hover {
   background: #486d7f;
 }
 
+button:active {
+  box-shadow: 0 1px #666;
+  transform: translateY(1px);
+}
+
+
 footer {
   grid-area: 4 / 1 / 5 / 7;
   margin-top: 50px;
