@@ -1,10 +1,5 @@
 import products from './products.js';
 
-// variable for the cart badge 
-// let cartCount = 0;
-// const productsContainer = document.querySelector('.products');
-
-
 
 // Display the date and time
 function updateDateTime() {
@@ -49,60 +44,6 @@ const updateCartNum = (count) => {
     cartContainer.insertBefore(cartNumEl, cartTextEl);
   }
 }
-
-// export default updateCartNum;
-
-//store a minimum of five products in your shop items and render the shop items dynamically to the DOM
-
-// products.forEach((product, i) => {
-//   const container = document.createElement('div');
-//   container.classList = `product product-${i + 1}`;
-//   container.innerHTML = `
-//     ${i === 0 || i == 1 ? '<span class="new-tag">New</span>' : ''}
-//     <img src=${product.image} alt="sneaker" />
-//     <h4>${product.title}</h4>
-//     <p class="color">${product.color}</p>
-//     <p class="price">A$${product.price}</p>
-//     <button>Add to Cart</button>
-//   `;
-//   productsContainer.appendChild(container);
-// });
-
-// // Add to cart button functionality
-// const cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
-// const addToCartBtns = document.querySelectorAll('button');
-// const cartContainer = document.getElementById('cart');
-// const cartTextEl = document.getElementById('cart-text');
-// let countAddItem = 0;
-
-// for (let i = 0; i < addToCartBtns.length; i++) {
-//   const btn = addToCartBtns[i];
-//   btn.addEventListener('click', (event) => {
-//     const parent = event.target.parentElement;
-//     const title = parent.querySelector('h4').innerHTML;
-//     const price = Number(parent.querySelector('.price').innerHTML.slice(2));
-//     const image = parent.querySelector('img').src;
-//     const color = parent.querySelector('.color').innerHTML;
-//     const selectedProduct = { title, price, color, image };
-
-//     if (cart.length === 0) {
-//       cart.push(selectedProduct);
-//       countAddItem++;
-//       updateCartNum(countAddItem, cartContainer, cartTextEl);
-//     } else {
-//       //Not add same items twice
-//       let result = cart.find((el) => el.title === selectedProduct.title);
-//       if (result === undefined) {
-//         cart.push(selectedProduct);
-//         countAddItem++;
-//         updateCartNum(countAddItem, cartContainer, cartTextEl);
-//       }
-//     }
-
-//     localStorage.setItem('cart', JSON.stringify(cart));
-//     localStorage.setItem('cartCount', countAddItem);
-//   });
-// }
 
 
 const divProducts = document.querySelector('.products');
@@ -260,5 +201,6 @@ addToCartBtns.forEach( btn => {
     btn.addEventListener('click', addToCart);
 })
 
-let cartCount = JSON.parse(localStorage.getItem('cartCount')) || 0;
+let cartCount = JSON.parse(localStorage.getItem('cartCount')) || 0 ;
 updateCartNum(cartCount);
+
