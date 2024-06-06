@@ -1,23 +1,23 @@
 # Lace Lane
 
-This project is a website created using HTML and CSS that showcases what we've learned so far. The website is a online stores for sneakers that provide Home page and Cart page for users.
+This project is a website created using HTML, CSS and JavaScript that showcases what we've learned so far. The website is a online stores for sneakers that features a Home page and Cart page for users.
 
 
 ## Team Members 
 
 - Kun
-- Prakash
 - Klaus
+- Prakash
 
 ## Project Overview
 
-This project is a simple website built using HTML and CSS. It includes:
+This project is a simple website built using HTML, CSS and JavaScript. It includes:
 
-- Two pages: Home page and Cart page. 
+- Two web pages: Home page and Cart page. 
 - Header and Footer: the two pages share the same header and footer.
 - Home Page Banner
 - Store that has 6 items 
-- Cart with 3 items, and it has Add and Remove function
+- Cart with add and remove functionality
 - Summary with the total price etc
 
 ## Features
@@ -27,6 +27,10 @@ This project is a simple website built using HTML and CSS. It includes:
 - Structured and nested html code including semantic elements
 - CSS styling with researched color palette
 - Tables and Forms
+- Utilises an API endpoint to display information
+- Renders items dynamically to the DOM
+- Calculates a dynamic cart total price on cart items
+- Commits cart items to storage and renders saved cart items on load
 
 ## Usage
 
