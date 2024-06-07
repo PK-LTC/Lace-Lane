@@ -20,7 +20,7 @@ fetch('https://onlineprojectsgit.github.io/API/WDEndpoint.json')
     throw new Error('Request failed!');
   })
   .then((data) => {
-    const infoHTML = `Built by ${data.info.students[0]}, ${data.info.students[15]}, ${data.info.students[17]}.A group project of ${data.info.Name} program, Cohort ${data.info.cohort}.`;
+    const infoHTML = `Built by ${data.info.students[0]}, ${data.info.students[15]}, ${data.info.students[17]}. A group project of ${data.info.Name} program, Cohort ${data.info.cohort}.`;
     info.innerHTML = infoHTML;
   })
   .catch((error) => console.error(error.message));
@@ -139,7 +139,7 @@ const displayTotalPrice = () => {
   tdPriceTotal.textContent = 'A$' + totalPrice;
 }
 
-// Render any items in the cart dynamically to the DOM
+//Render any items in the cart dynamically to the DOM
 const displayShoppingCart = () => {
 
   let divShoppingCart = document.querySelector('div.shopping-cart');
@@ -167,6 +167,8 @@ const displayShoppingCart = () => {
   displayTotalPrice();
 
 }
+
+
 
 // eventlistener function when increase or decrease the quantity
 const onQuantityChange = (e) => {
